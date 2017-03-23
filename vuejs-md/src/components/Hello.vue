@@ -13,6 +13,15 @@
       <md-card-content>
         <!-- <md-button class="md-raised md-primary" v-on:click="fillTable()">Fill Table</md-button>
         <md-button class= "md-raised md-primary" v-on:click="clearTable()">Clear Table</md-button> -->
+        <form v-on:submit="addContact">
+          <input type ="text" v-model="newContact.firstname" placeholder="Enter Name">
+        </br>
+          <input type ="text" v-model="newContact.lastname" placeholder="Enter Lastname">
+        </br>
+          <input type ="text" v-model="newContact.email" placeholder="Enter Email">
+        </br>
+          <input type="submit" value="Submit">
+        </form>
         <button v-on:click="fillTable()">Fill Table</button>
         <button v-on:click="clearTable()">Clear Table</button>
         <button v-on:click="greet('Hello World!!!')">Say Greeting</button>
@@ -47,6 +56,7 @@ export default {
   // },
   data() {
     return{
+      newContact: {},
       contacts: [
         // {firstname:'lenguyenwi',lastname:'vinsmoke',email:'allbluesky@gmail.com'},
         // {firstname:'lenguyenwi',lastname:'vinsmoke',email:'allbluesky@gmail.com'},
@@ -55,6 +65,15 @@ export default {
     }
   },
   methods:{
+    addContact: function(e){
+    this.contacts.push({
+      firstname: this.newContact.firstname,
+      lastname: this.newContact.lastname,
+      email: this.newContact.email
+      }
+    );
+    e.preventDefault();//make the web browser not restart after click button submit
+    },
     fillTable: function() {
       this.contacts.push({firstname:'lenguyenwi',lastname:'vinsmoke',email:'allbluesky@gmail.com'});
       this.contacts.push({firstname:'johhannes',lastname:'funny',email:'stupid@gmail.com'});

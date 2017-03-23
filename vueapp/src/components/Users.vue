@@ -8,7 +8,6 @@
       <input type ="text" v-model="newUser.email" placeholder="Enter Email">
     </br>
       <input type ="submit" value="Submit">
-
     </form>
     <ul>
       <li v-for="user in users">
