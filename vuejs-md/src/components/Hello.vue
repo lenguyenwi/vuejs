@@ -40,6 +40,7 @@
               <md-table-cell>{{contact.firstname}}</md-table-cell>
               <md-table-cell>{{contact.lastname}}</md-table-cell>
               <md-table-cell>{{contact.email}}</md-table-cell>
+              <button v-on:click="deleteContact(contact)">x</button>
             </md-table-row>
         </md-table-body>
       </md-table>
@@ -87,6 +88,9 @@ export default {
     },
     deletefristRow: function(){
             this.contacts.splice(0,1);
+    },
+    deleteContact:function(contact){
+      this.contacts.splice(this.contacts.indexOf(contact),1);
     }
   },
 }
