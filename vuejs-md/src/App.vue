@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <!-- <hello></hello> -->
+    <projectsFirebase></projectsFirebase>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+// import Hello from './components/Hello'
+import ProjectsFirebase from './components/ProjectsFirebase'
 
+
+  // Hello,
 export default {
   name: 'app',
   components:{
-    Hello
+  ProjectsFirebase
   }
 }
 </script>
