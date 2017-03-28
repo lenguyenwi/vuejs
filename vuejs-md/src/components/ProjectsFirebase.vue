@@ -26,7 +26,7 @@
         </br>
           <input class="btn btn-primary" type="submit" value="Submit">
         </form>
-          <button class="btn btn-primary" v-on:click="greet('Hello World!!!')">Say Greeting</button>
+          <!-- <button class="btn btn-primary" v-on:click="greet('Hello World!!!')">Say Greeting</button> -->
       </md-card-content>
       <md-table>
         <md-table-header>
@@ -99,8 +99,16 @@ export default {
     },
 
     deleteProject:function(project){
-      alert("para");
-      projectsRef.child(project['.key']).remove();
+
+      var answer = confirm("Delete data?")
+        if (answer) {
+            //some code
+            projectsRef.child(project['.key']).remove();
+        }
+        else {
+            //some code
+        }
+
     },
 
   },//end of methods
