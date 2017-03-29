@@ -10,24 +10,8 @@
           by Lenguyenwi
         </div>
       </md-card-header>
-      <md-card-content>
-        <!-- <md-button class="md-raised md-primary" v-on:click="fillTable()">Fill Table</md-button>
-        <md-button class= "md-raised md-primary" v-on:click="clearTable()">Clear Table</md-button> -->
-        <form v-on:submit="addProject">
-          <input class="form-control" type ="text" v-model="newProject.projectname" placeholder="Project name">
-        </br>
-          <input class="form-control" type ="text" v-model="newProject.languages" placeholder="Project languages">
-        </br>
-        <input class="form-control" type ="text" v-model="newProject.frameworks" placeholder="Project Frameworks">
-        </br>
-        <input class="form-control" type ="text" v-model="newProject.tools" placeholder="Project tools">
-        </br>
-        <input class="form-control" type ="text" v-model="newProject.decription" placeholder="Project decription">
-        </br>
-          <input class="btn btn-primary" type="submit" value="Submit">
-        </form>
-          <!-- <button class="btn btn-primary" v-on:click="greet('Hello World!!!')">Say Greeting</button> -->
-      </md-card-content>
+      <!-- <md-card-content>
+      </md-card-content> -->
       <md-table>
         <md-table-header>
           <md-table-row>
@@ -39,21 +23,39 @@
           </md-table-row>
         </md-table-header>
         <md-table-body>
+            <md-table-row>
+              <md-table-cell>
+              <input class="form-control" type ="text" v-model="newProject.projectname" placeholder="Project name">
+            </md-table-cell>
+            <md-table-cell>
+              <input class="form-control" type ="text" v-model="newProject.languages" placeholder="Project languages">
+            </md-table-cell>
+            <md-table-cell>
+              <input class="form-control" type ="text" v-model="newProject.frameworks" placeholder="Project Frameworks">
+            </md-table-cell>
+            <md-table-cell>
+              <input class="form-control" type ="text" v-model="newProject.tools" placeholder="Project tools">
+            </md-table-cell>
+            <md-table-cell>
+              <input class="form-control" type ="text" v-model="newProject.decription" placeholder="Project decription">
+            </md-table-cell>
+          <md-table-cell>
+            <button v-on:click="addProject()">+</button>
+          </md-table-cell>
+        </md-table-row>
             <md-table-row v-for="project in projects">
               <md-table-cell><a v-bind:href="projects.projectName">{{project.projectName}}</a></md-table-cell>
               <md-table-cell>{{project.proLanguages}}</md-table-cell>
               <md-table-cell>{{project.proFrameworks}}</md-table-cell>
               <md-table-cell>{{project.proTools}}</md-table-cell>
               <md-table-cell>{{project.proDecription}}</md-table-cell>
-              <button v-on:click="deleteProject(project)">x</button>
+              <md-table-cell><button v-on:click="deleteProject(project)">x</button></md-table-cell>
             </md-table-row>
         </md-table-body>
-
       </md-table>
     </md-card>
   </div>
 </template>
-
 <script>
 
 import Firebase from 'firebase'
