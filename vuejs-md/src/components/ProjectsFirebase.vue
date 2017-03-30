@@ -2,14 +2,6 @@
   <div class="projectsFirebase">
     <!-- <hello></hello> -->
     <md-card>
-      <md-card-header>
-        <div class="md-title">
-          Project profile
-        </div>
-        <div class="md-subhead">
-          by Lenguyenwi
-        </div>
-      </md-card-header>
       <!-- <md-card-content>
       </md-card-content> -->
       <md-table>
