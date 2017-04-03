@@ -1,6 +1,7 @@
 <template>
   <div class="projectsFirebase">
     <!-- <hello></hello> -->
+    <div id="wrapper">
     <md-card>
       <!-- <md-card-content>
       </md-card-content> -->
@@ -46,6 +47,7 @@
         </md-table-body>
       </md-table>
     </md-card>
+  </div>
   </div>
 </template>
 <script>
@@ -111,7 +113,14 @@ export default {
 
 <style>
 #projectsFirebase {
-  margin: 60px 30px 0px 30px;
+  /*margin: 60px 30px 0px 30px;*/
+  margin: 100px auto;
+}
+div.md-table.md-theme-default {
+    margin: 50px auto;
+}
+#md-table-lv {
+    margin: 50px auto;
 }
 
 :root {
